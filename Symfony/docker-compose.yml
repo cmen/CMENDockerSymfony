@@ -1,0 +1,42 @@
+version: '2'
+services:
+    test_application:
+        image: cmeneses/data_application
+        volumes:
+            - /xxx/Test-Docker-Sf/Symfony:/var/www/html
+    test_data:
+        image: cmeneses/data_mysql
+        volumes:
+            - /xxx/Test-Docker-Sf/Data:/var/lib/mysql
+    test_database:
+        image: cmeneses/mysql5.7
+        ports:
+            - 60001:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: test
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
+        volumes_from:
+            - test_data
+    test_phpmyadmin:
+        image: cmeneses/phpmyadmin4.6
+        ports:
+            - 60002:80
+        links:
+            - test_database:db
+        environment:
+            - PMA_USER=root
+            - PMA_PASSWORD=root
+    test_web:
+        image: cmeneses/apache2_php5.6
+        ports:
+            - 60000:80
+        volumes_from:
+            - test_application
+        links:
+            - test_database
+        working_dir: /var/www/html
+
+
+
