@@ -45,7 +45,9 @@ $ docker exec 22e642982db4 composer install
 4 : Test the application
 -----------------------------
 Symfony application : [http://localhost:60000/web/app_dev.php](http://localhost:60000/web/app_dev.php)
+
 PHPMyAdmin : [http://localhost:60002](http://localhost:60002)
+
 MySQL : [http://localhost:60001](http://localhost:60001)
 
 5 : Stop the application
