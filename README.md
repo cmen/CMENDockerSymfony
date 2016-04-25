@@ -3,11 +3,11 @@
 
 In Docker directory, run the commands : 
 ```bash
-$ docker build -t cmeneses/apache2_php5.6 ./apache2_php5.6/
+$ docker build -t cmeneses/apache_php:2-5.6 ./apache2_php5.6/
 $ docker build -t cmeneses/data_application ./data_application/
 $ docker build -t cmeneses/data_mysql ./data_mysql/
-$ docker build -t cmeneses/mysql5.7 ./mysql5.7/
-$ docker build -t cmeneses/phpmyadmin4.6 ./phpmyadmin4.6/
+$ docker build -t cmeneses/mysql:5.7 ./mysql5.7/
+$ docker build -t cmeneses/phpmyadmin:4.6 ./phpmyadmin4.6/
 ```
 
 2 : Modify docker-compose.yml
@@ -32,7 +32,7 @@ In Symfony directory, run the command :
 $ docker-compose up -d
 ```
 
-To get `cmeneses/apache2_php5.6` container ID, run the command :  
+To get `cmeneses/apache_php` container ID, run the command :  
 ```bash
 $ docker ps
 ```
