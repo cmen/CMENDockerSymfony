@@ -32,6 +32,8 @@ services:
         image: cmeneses/apache_php:2-5.6
         ports:
             - 60000:80
+        environment:
+            XDEBUG_CONFIG: remote_host=172.22.0.1
         volumes_from:
             - test_application
         links:
