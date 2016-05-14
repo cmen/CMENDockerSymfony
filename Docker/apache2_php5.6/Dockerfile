@@ -14,6 +14,8 @@ RUN apt-get install -y php5-mcrypt php5-mysql php5-apcu php5-curl php5-intl php5
 
 ADD php-custom.ini /etc/php5/apache2/conf.d
 ADD 20-xdebug.ini /etc/php5/apache2/conf.d
+ADD php-custom.ini /etc/php5/cli/conf.d
+ADD 20-xdebug.ini /etc/php5/cli/conf.d
 
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer \
     && chmod +x /usr/local/bin/composer
