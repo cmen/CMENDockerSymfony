@@ -35,11 +35,17 @@ $ docker-compose up -d
 
 4 : Test the application
 -----------------------------
-Symfony application : [http://localhost:60000/web/app_dev.php](http://localhost:60000/web/app_dev.php)
 
-PHPMyAdmin : [http://localhost:60002](http://localhost:60002)
+Add virtual host in file `/etc/hosts`. Open it and add this line :
+```bash
+127.0.0.1     app.local
+```
 
-MySQL : [http://localhost:60001](http://localhost:60001)
+Symfony application : [app.local:60000/app_dev.php](http://app.local:60000/app_dev.php)
+
+PHPMyAdmin : [app.local:60002](http://app.local:60002)
+
+MySQL : [app.local:60001](http://app.local:60001)
 
 5 : Stop the application
 -----------------------------
